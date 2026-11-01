@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Find reusable-image candidates with source and license metadata from Wikimedia Commons."
+    />
+    <title>Image Discovery Workbench</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="badge">Subhash Dixit · Applied portfolio</div>
+      <h1>Image Discovery Workbench</h1>
+      <p>
+        Find reusable-image candidates with source and license metadata from
+        Wikimedia Commons.
+      </p>
+      <a href="https://github.com/subhashdixit/image-discovery-workbench"
+        >Source, concepts and operating guide ↗</a
+      >
+    </header>
+    <main>
+      <section>
+        <h2>1 · Search Commons</h2>
+        <label
+          >Search phrase<input
+            id="query"
+            maxlength="120"
+            value="Kolkata bridge" /></label
+        ><button id="search">Search images</button>
+        <p>
+          Search goes directly to the public Wikimedia Commons API. There is no
+          login or secret. Image authors and licenses remain attached to the
+          source.
+        </p>
+        <button id="export" disabled>Export result metadata JSON</button>
+      </section>
+      <section>
+        <h2>2 · Review results and attribution</h2>
+        <div id="gallery" class="grid"></div>
+      </section>
+      <p id="status" role="status" aria-live="polite"></p>
+      <details>
+        <summary>How this works · scope and limitations</summary>
+        <p>
+          The original Selenium image scraper is preserved. This maintained app
+          uses Commons’ documented API to retrieve candidate images and
+          metadata. A search match is not permission to reuse without checking
+          the file page and license terms.
+        </p>
+      </details>
+    </main>
+    <footer>
+      <p>
+        GitHub Pages · HTML / JavaScript · Original project preserved in source.
+      </p>
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
