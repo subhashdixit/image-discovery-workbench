@@ -1,5 +1,8 @@
 # Image Discovery Workbench
 
+**Reproducible versions:** [Dependency versions and exact setup](DEPENDENCIES.md).
+
+
 [Open the application](https://subhashdixit.github.io/image-discovery-workbench/) · [Report an issue](https://github.com/subhashdixit/image-discovery-workbench/issues)
 
 Replace a brittle Selenium image-search scrape with an inspectable public-API image discovery workflow that keeps provenance attached.
