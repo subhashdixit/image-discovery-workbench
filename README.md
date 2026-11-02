@@ -102,3 +102,7 @@ Original Image_Scrapper source preserved. Maintained integration uses the offici
 Requires public Commons API/network access; no offline default gallery or fabricated search result. Up to 120 search characters and 12 results. Upstream quotas/CORS/network changes can interrupt search. Image requests expose routine connection metadata to Wikimedia. Original scraping binaries are retained outside site and are not executed.
 
 The test suite checks calculation contracts and invalid inputs. It cannot establish that an input dataset is representative, that a heuristic is scientifically correct for every domain, or that a result is suitable for an automated consequential decision. Read the original source alongside the maintained browser implementation when comparing behavior.
+
+## Local dependency installation
+
+The maintained app is HTML/CSS/JavaScript and needs no Python packages. `requirements.txt` documents this; install development tools with `npm ci` using the pinned Node/npm versions. See [DEPENDENCIES.md](DEPENDENCIES.md). Original prototype requirements are preserved at `archive/prototype-requirements.in` where present; they are not the supported install command.
