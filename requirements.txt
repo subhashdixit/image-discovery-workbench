@@ -1,3 +1,5 @@
+# Historical prototype dependencies: preserved for reference.
+# Supported maintained-release installation and exact locks: DEPENDENCIES.md.
 beautifulsoup4==4.8.1
 bs4==0.0.1
 certifi==2019.9.11
