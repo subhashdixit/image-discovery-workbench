@@ -19,7 +19,9 @@ export function safeURL(value, kind = "page") {
   try {
     const u = new URL(value);
     const hosts =
-      kind === "image" ? ["upload.wikimedia.org"] : ["commons.wikimedia.org"];
+      kind === "image"
+        ? ["upload.wikimedia.org", "thumb.wikimedia.org"]
+        : ["commons.wikimedia.org"];
     return u.protocol === "https:" && hosts.includes(u.hostname) && !u.username
       ? u.href
       : null;

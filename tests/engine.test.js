@@ -43,3 +43,35 @@ test("source metadata is preserved and missing results stay empty", () => {
   assert.deepEqual(imageResults({ query: { pages: {} } }), []);
   assert.throws(() => imageResults({ error: {} }));
 });
+
+test("current Commons thumbnail host is accepted without broadening to arbitrary subdomains", () => {
+  assert.equal(
+    safeURL(
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/demo.jpg",
+      "image",
+    ),
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/demo.jpg",
+  );
+  assert.equal(
+    safeURL("https://thumb.wikimedia.org.evil.test/demo.jpg", "image"),
+    null,
+  );
+  const r = imageResults({
+    query: {
+      pages: {
+        1: {
+          title: "File:Example.jpg",
+          imageinfo: [
+            {
+              thumburl:
+                "https://thumb.wikimedia.org/wikipedia/commons/thumb/demo.jpg",
+              descriptionurl:
+                "https://commons.wikimedia.org/wiki/File:Example.jpg",
+            },
+          ],
+        },
+      },
+    },
+  });
+  assert.equal(r.length, 1);
+});
